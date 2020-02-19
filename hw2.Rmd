@@ -1,0 +1,79 @@
+---
+title: "hw2.Rmd"
+author: "Juan Simons, Github: Giltbuckle3"
+date: "2/7/2020"
+output: html_document
+---
+## Part 1
+
+# Question 1
+```{r}
+high <- 24;
+low<- 15;
+cel<-(high - 32)/1.8;
+cel;
+cel<-(low - 32)/18;
+cel;
+```
+
+# Question 2
+```{r}
+vec200<-rep(c(1 ,3), times=100)
+vec200
+```
+
+# Question 3
+```{r}
+numPerfect <- 1+ (floor(sqrt(2001))-(ceiling(sqrt(1))))
+numPerfect
+```
+
+
+
+## Part 2
+
+# Question 1
+```{r}
+library(ggplot2)
+#first question
+mpgSorted <- mpg[order(mpg$hwy, decreasing =TRUE),]
+top3<-mpgSorted[1:3,]
+top3
+```
+
+# Question 2
+```{r}
+#second question
+library(ggplot2)
+mpg[mpg$class == 'compact',]
+numCompact<- 47
+numCompact
+```
+
+# Question 3
+```{r}
+library(ggplot2)
+plot(as.numeric(mpg$cty), mpg$hwy)
+```
+
+In this graph, we see few points as instead of taking each individual value of the rows and displaying it, it is taking each value that equals the same and displays it. Example: if there are 5 rows with the same value 20 in the *hwy* column and 15 in the *cty* column, they will be displayed as a single dot in the plot instead of 5 individual dots.
+
+# Question 4
+```{r}
+library(ggplot2)
+
+
+beautifulPlotCty1 <- plot(mpg$year== '1999',mpg$cty)
+beautifulPlotCty1
+
+beautifulPlotCty2 <- plot(mpg$year== '2008',mpg$cty)
+beautifulPlotCty2
+
+beautifulPlotHwy1 <- plot(mpg$year== '1999',mpg$hwy)
+beautifulPlotHwy1
+
+beautifulPlotHwy2 <- plot(mpg$year== '2008',mpg$hwy)
+beautifulPlotHwy2
+
+```
+As we see in the 4 inefficient plots I have made, we can see that cars from the year *2008* tend to be more fuel efficent in highways than the ones in *1999*. Although the cars in *1999* are more fuel efficent in cities than the ones from *2008*.(I tried to make a really good plot for this but was not able to figure it out.)  
